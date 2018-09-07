@@ -16,7 +16,6 @@ int check_leader(int arr[], int o1, int o2){
 		c[i] = arr[i] + c[i-1] ;
 		cout<<c[i] ;
 	}
-
 	int i=0 ; 
 
 	while(1){
