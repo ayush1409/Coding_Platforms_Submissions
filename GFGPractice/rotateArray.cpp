@@ -1,19 +1,20 @@
+/*
+ * Given an unsorted array arr[] of size N, rotate it by D elements in the counter-clockwise direction. 
+	Input:
+	N = 5, D = 2
+	arr[] = {1,2,3,4,5}
+	Output: 3 4 5 1 2
+ * */
+
+
 // { Driver Code Starts
 #include<bits/stdc++.h>
 using namespace std;
 
 
- // } Driver Code Ends
-
 
 class Solution{
     public:
-    
-    void swap(int &x, int &y){
-        int temp = x ;
-        x = y ;
-        y = temp ;
-    }
     
     void reverseHelper(int arr[], int start, int end){
         if(start == end)
