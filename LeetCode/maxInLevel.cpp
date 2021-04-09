@@ -1,4 +1,4 @@
-// Problem : https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+// Problem : https://leetcode.com/problems/find-largest-value-in-each-tree-row/
 
 /**
  * Definition for a binary tree node.
@@ -13,17 +13,28 @@
  */
 class Solution {
 public:
-    vector<vector<int> > zigzagLevelOrder(TreeNode* root) {
-        vector<vector<int> > result ;
-        vector<int> level ;
-        unsigned int n ;
-        TreeNode *curr = NULL;
-        if(root ==NULL)
+    int findMax(vector<int> &vec){
+        int max = INT_MIN ;
+        
+        for(auto x : vec){
+            if(x > max)
+                max = x ;
+        }
+        
+        return max ;
+    }
+    vector<int> largestValues(TreeNode* root) {
+        vector<int> result ;
+        
+        if(root == NULL)
             return result ;
         
-        int level_iter = 0 ;
+        vector<int> level ;
         
-        queue<TreeNode *> q ;
+        TreeNode *curr ;
+        unsigned int n ;
+        int max = INT_MIN ;
+        queue<TreeNode*> q ;
         q.push(root) ;
         
         while(!q.empty()){
@@ -31,25 +42,24 @@ public:
             level.clear() ;
             n = q.size() ;
             
-            for(int i = 1 ; i<=n ; i++){
+            for(int i=0 ; i<n ; i++){
                 curr = q.front() ;
                 q.pop() ;
-
+                
                 level.push_back(curr->val) ;
-               
-                if(curr -> left != NULL)
+                
+                if(curr->left != NULL)
                     q.push(curr->left) ;
-                if(curr -> right != NULL)
+                
+                if(curr->right != NULL)
                     q.push(curr->right) ;
                 
             }
             
-            if(level_iter % 2 != 0)
-                reverse(level.begin(), level.end()) ;
-            
-            level_iter++ ;
-            result.push_back(level) ;
-            
+            if(level.size() != 0){
+                max = findMax(level) ;
+                result.push_back(max) ;
+            }
         }
         
         return result ;
