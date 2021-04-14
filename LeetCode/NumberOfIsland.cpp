@@ -1,6 +1,8 @@
+// Problem : https://leetcode.com/problems/number-of-islands/
+
 class Solution {
 public:
-    //static int m,n ;
+    
     int numIslands(vector<vector<char> >& grid) {
         
         if(grid.size() == 0)
@@ -10,11 +12,7 @@ public:
         
         vector<vector<bool> > visited(m, vector<bool>(n, false)); 
         int NumOfIsland = 0 ;
-        /*
-        for(int i = 0 ; i < m ; i++){
-            visited[i] = vector<bool>(n, false) ; 
-        }
-        */
+        
         for(int i = 0 ; i < m ; i++){
             for(int j = 0 ; j < n ; j++){
                 if(visited[i][j] == false && grid[i][j] == '1'){
@@ -33,7 +31,6 @@ public:
         
         queue<pair<int, int> > q ;
         q.push(make_pair(i,j)) ;
-        //int x,y ;
         
         pair<int,int> current ;
         
