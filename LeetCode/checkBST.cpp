@@ -11,6 +11,9 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+// sample comment
+
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
