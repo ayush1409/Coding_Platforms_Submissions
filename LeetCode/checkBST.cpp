@@ -12,7 +12,7 @@
  * };
  */
 
-// sample comment
+// sample comment from windows machine 
 
 class Solution {
 public:
