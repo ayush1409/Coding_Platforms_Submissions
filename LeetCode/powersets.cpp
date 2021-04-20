@@ -4,33 +4,33 @@ class Solution {
 public:
     vector<vector<int> > subsets(vector<int>& nums) {
 
-        vector<vector<int> > powersets ;
+        vector<vector<int> > powerset ;
         vector<int> currentSet ;
         int n ;
         
-        powersets.push_back(currentSet) ;
+        powerset.push_back(currentSet) ;
         
         if(nums.size() == 0)
-            return powersets ;
+            return powerset ;
         
         for(int i = 0 ; i < nums.size() ;i++){
             
             /*
-            if(powersets.size() == 0){
-                powersets.append(currentSet) ;
+            if(powerset.size() == 0){
+                powerset.append(currentSet) ;
                 continue ;
             }
             */
             
-            n = powersets.size() ;
+            n = powerset.size() ;
             
             for(int j = 0 ; j < n ; j++){
-                vector<int> current(powersets[j].begin(), powersets[j].end());
+                vector<int> current(powerset[j].begin(), powerset[j].end());
                 current.push_back(nums[i]) ;
-                powersets.push_back(current) ;
+                powerset.push_back(current) ;
             }
         }
         
-        return powersets ;
+        return powerset ;
     }
 };
