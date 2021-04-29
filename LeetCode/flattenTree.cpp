@@ -45,8 +45,7 @@ public:
     }
     
     void flatten(TreeNode* root) {
-        TreeNode * result = NULL;
-
+        
         if(root == NULL || (root -> left == NULL && root -> right == NULL))
             return ;
        
