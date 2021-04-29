@@ -13,7 +13,7 @@ struct Node {
         left = right = NULL;
     }
 };
-*/
+
 
 // return true if the given tree is a BST, else return false
 class Solution
