@@ -11,24 +11,34 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-
-// sample comment from windows machine 
-
 class Solution {
 public:
-    bool isValidBST(TreeNode* root) {
-        return isValidBSTHelper(root, INT_MIN, INT_MAX) ;
-    }
     
     bool isValidBSTHelper(TreeNode *root, int min, int max){
-        
         if(root == NULL)
             return true ;
         
-        if(root->val < min || root->val > max)
+        if(root -> val == INT_MAX && root -> right  != NULL)
             return false ;
         
-        return  isValidBSTHelper(root->left, min, root->val - 1) && 
-                isValidBSTHelper(root->right, root -> val + 1, max) ;
+        if(root -> val == INT_MIN && root -> left != NULL)
+            return false ;
+    
+        if(root -> val < min || root -> val > max) 
+            return false ;
+        
+        bool a = true, b = true ; 
+        if(root -> left)
+            a = isValidBSTHelper(root -> left, min, root -> val-1) ;
+        if(root -> right)        
+            b = isValidBSTHelper(root -> right, root -> val+1, max) ;
+        
+        return a && b ;
     }
+    
+    
+    bool isValidBST(TreeNode* root) {
+        return isValidBSTHelper(root, INT_MIN, INT_MAX) ;
+    }
+   
 };
