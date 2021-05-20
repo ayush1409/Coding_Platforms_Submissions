@@ -1,3 +1,5 @@
+// Problem : https://codeforces.com/problemset/problem/266/B
+
 #include <iostream>
 #include <bits/stdc++.h>
 #include <typeinfo>
