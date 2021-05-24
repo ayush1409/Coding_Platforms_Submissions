@@ -22,23 +22,11 @@ public:
 
 class Solution {
 public:
-    /*
-    void preorderHelper(Node *root, vector<int> &result){
-        if(root != NULL){
-            result.push_back(root -> val) ;
-            
-            for(auto child : root -> children)
-                preorderHelper(child, result) ;
-        }    
-    }
-    */
     
     vector<int> preorder(Node* root) {
         vector<int> result ;
         if(root == NULL)
             return result ;
-        
-        //postorderHelper(root, result) ;
         
         Node *curr = NULL ;
         stack<Node*> s ;
@@ -55,7 +43,6 @@ public:
             }
         }
         
-        //reverse(result.begin(), result.end()) ;
         return result ;
     }
 };

@@ -23,23 +23,10 @@ public:
 class Solution {
 public:
     
-    /*
-    void postorderHelper(Node *root, vector<int> &result){
-        if(root != NULL){
-            for(auto child : root -> children)
-                postorderHelper(child, result) ;
-        
-            result.push_back(root -> val) ;
-        }    
-    }
-    */
-    
     vector<int> postorder(Node* root) {
         vector<int> result ;
         if(root == NULL)
             return result ;
-        
-        //postorderHelper(root, result) ;
         
         Node *curr = NULL ;
         stack<Node*> s ;
