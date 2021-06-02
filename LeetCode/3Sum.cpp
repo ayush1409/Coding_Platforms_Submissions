@@ -51,7 +51,6 @@ public:
                 else
                     r-- ;
             }
-            
             triplet.clear() ;
             while(i < n && nums[i] == a)
                 i++ ;
