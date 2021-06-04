@@ -11,10 +11,11 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
 class Solution {
 public:
     int depthX = -1, depthY = -2 ;
-    bool flag = true ;
+    bool NotSameParent = true ;
     
     void isCousinHelper(TreeNode *root, int x, int y, int depth){
         if(root == NULL)
@@ -27,9 +28,9 @@ public:
         
         if(root -> left && root -> right){
             if(root -> left -> val == x && root -> right -> val == y)
-                flag = false ;
+                NotSameParent = false ;
             if(root -> right -> val == x && root -> left -> val == y)
-                flag = false ;
+                NotSameParent = false ;
         }
         
         isCousinHelper(root -> left, x, y, depth + 1) ;
@@ -43,6 +44,6 @@ public:
         
         isCousinHelper(root, x, y, 0) ;
         
-        return flag && (depthX == depthY) ;
+        return NotSameParent && (depthX == depthY) ;
     }
 };
