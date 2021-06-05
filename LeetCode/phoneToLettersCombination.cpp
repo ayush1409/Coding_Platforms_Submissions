@@ -2,8 +2,7 @@
 
 class Solution {
 public:
-    
-    // Time: O(4^(n*n)), Space : O(n)
+
     map<int, vector<char>> digitMap ;
     
     void createMap(){
