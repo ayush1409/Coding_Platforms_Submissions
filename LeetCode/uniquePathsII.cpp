@@ -16,7 +16,6 @@ public:
             for(int j = 0 ; j < n ; j++){
                 if(i == 0 && j == 0)
                     continue ;
-                
                 if(obstacleGrid[i][j] == 1)
                     paths[i][j] = 0 ;
                 else
