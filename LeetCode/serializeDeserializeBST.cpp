@@ -27,7 +27,6 @@ public:
             s = s + " " + leftPreorder ;
         if(!rightPreorder.empty())
             s = s + " " + rightPreorder ;
-        //cout<<ans<<endl ;
         
         return s ;
     }
