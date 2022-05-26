@@ -16,7 +16,7 @@ void merge(long long *arr, int left, int mid, int right,long long &invCount){
     // perform merge
     int i = 0, j = 0, k = left ;
     while(i < n1 && j < n2){
-        if(A[i] < B[j])
+        if(A[i] <= B[j])
             arr[k++] = A[i++];
         else{
             arr[k++] = B[j++] ;
