@@ -29,9 +29,7 @@ public:
                 else if(nums[low] + nums[high] < target)
                     low++ ;
                 else{
-                    triplet.push_back(a) ;
-                    triplet.push_back(nums[low]) ;
-                    triplet.push_back(nums[high]) ;
+                    triplet.insert(triplet.begin(), {a, nums[low], nums[high]}) ;
                     sort(triplet.begin(), triplet.end()) ;
                     b = nums[low] ;
                     c = nums[high] ;
